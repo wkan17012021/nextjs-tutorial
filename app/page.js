@@ -1,12 +1,11 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
+          page.js represents the homepage
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
@@ -15,7 +14,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -38,7 +37,41 @@ export default function Home() {
           priority
         />
       </div>
-
+      <div>
+        <p>
+          Conventionally, this boilerplate code assumes SSR: this is because
+          function component Home() sits within the app folder - NextJs' way of
+          declaring server side components. If we wanted to make it client side,
+          add the following directive to the top of the script:{" "}
+          <code>"use client"</code>. This enables us to run dynamic UI with the
+          benefits of server loading, SEO etc.
+        </p>
+        <p>
+          Typically, state management (use of hooks) is handled client side, so
+          it is reasonable to add the use client directive for any components
+          that manage state in your app.
+        </p>
+        <h2>How to create routes?</h2>
+        <p>
+          Say you want to create an about us page. Go to app folder, create a
+          folder called about-us. Inside this directory, create a page.js with a
+          react functional component called page(). Go to the route URL and the
+          component will render along with any markup defined in layout.js. Try
+          /about-us and /about-us/company
+        </p>
+        <p>
+          Dynamic routes are where we want to conditionally add the URL with
+          changing data. If we had a number of blog posts, the post id is the
+          dynamic data.
+        </p>
+        <h2>What about retrieving backend data?</h2>
+        <p>
+          We can create an api folder nested inside the app directory which will
+          serve as our backend logic and api endpoints. Inside api folder,
+          create a contextually named folder such as posts or users, then within
+          that folder add route.js
+        </p>
+      </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -47,7 +80,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
+            Docs{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -64,7 +97,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
+            Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -81,7 +114,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
+            Templates{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -98,7 +131,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
+            Deploy{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -109,5 +142,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
